@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://cef5xs76vov50"]
 
+[ext_resource type="Texture2D" uid="uid://bje1j4488wwif" path="res://assets/sprites/moon/0013.png" id="1_72ix8"]
+
 [node name="Main" type="Node2D" unique_id=311375995]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1054632403]
+
+[node name="0013" type="Sprite2D" parent="." unique_id=820873196]
+position = Vector2(707, 447)
+texture = ExtResource("1_72ix8")
