@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://cef5xs76vov50"]
 
-[ext_resource type="Texture2D" uid="uid://bje1j4488wwif" path="res://assets/sprites/moon/0013.png" id="1_72ix8"]
+[ext_resource type="Texture2D" uid="uid://dmtr0j4fm2jvw" path="res://assets/sprites/new blocks/fully original/california_poppy.png" id="1_y0acb"]
+[ext_resource type="Texture2D" uid="uid://pa5n7c22xk03" path="res://assets/sprites/new blocks/fully original/torch.png" id="2_j4d2a"]
+[ext_resource type="Script" uid="uid://crqasp46mxudb" path="res://scenes/levels/california_poppy.gd" id="2_u81e1"]
+[ext_resource type="Script" uid="uid://dv7b5rs7vgwh2" path="res://scenes/levels/torch.gd" id="3_u81e1"]
 
 [node name="Main" type="Node2D" unique_id=311375995]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1054632403]
 
-[node name="0013" type="Sprite2D" parent="." unique_id=820873196]
-position = Vector2(707, 447)
-texture = ExtResource("1_72ix8")
+[node name="CaliforniaPoppy" type="Sprite2D" parent="." unique_id=342418471]
+position = Vector2(-42.5, 40)
+scale = Vector2(6.3125, 5.875)
+texture = ExtResource("1_y0acb")
+script = ExtResource("2_u81e1")
+
+[node name="Torch" type="Sprite2D" parent="." unique_id=1040378651]
+position = Vector2(302, 100)
+scale = Vector2(6.625, 5.9999995)
+texture = ExtResource("2_j4d2a")
+script = ExtResource("3_u81e1")
+
+[node name="Timer" type="Timer" parent="Torch" unique_id=1768629782]
+
+[node name="Button" type="Button" parent="." unique_id=1492026857]
+offset_left = -443.0
+offset_top = -283.0
+offset_right = -246.0
+offset_bottom = -148.0
+text = "Parar"
+
+[connection signal="timeout" from="Torch/Timer" to="Torch" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="Torch" method="_on_button_pressed"]
